@@ -65,20 +65,38 @@ var student =[
       {id : 3, name:"김준현"}
 ];
 // 객체 배렬에서 name 속성이 null인 객체가 있는지 판별을 확인하는 코드를 작성하고 반환값을 출력해주세요
+let checkNull = [{name:null}];
+console.log(Array.isArray(student, checkNull));
 
 9.
 var arr = ["banana", "kiwi", "mango", "strawberry", "lime", "orange", "plum", "cherry"];
-// 문자열 길이가 5를 초과하는 요소가 있는지 검사하는 코드를 작성하고 반환값을 출력해주세요.
+// 문자열 길이가 5를 초과하는 요소가 있는지 검사하는 코드를 작성하고 반환값을 출력해주세요. 
+let arrFive = []
+for(let i=0; i<arr.length;i++){
+      if (arr.indexOf(arr.length) > 5) {
+            arrFive.push(arr[i]);
+      }
+}
 
 10.
 var arr = ["banana", "kiwi", "mango"];
 // kiwi 와 manggo 사이에 새로운 요소를 삽입하는 코드를 작성하고 출력해주세요
+let arrNewItem =["apple"]
+arr.splice(2,0,...arrNewItem);
+console.log(arr);
 
 11.
 var arr = [1, 5, -3, 10, 0, 8];
-
 // 배열에 음수가 하나라도 있는지 판별하는 코드를 작성하고 반환값을 출력해주세요
+for(let i=0; i<arr.length;i++){
+      const num = arr[i] >=0 ? "양수":"음수";
+      console.log(num); 
+};
 
 12.
 var arr = [1, 5, -3, 10, 0, 8];
 // 모든 숫자가 음수인지 판별하는 코드를 작성하고 반환값을 출력해주세요
+const findNum = arr.filter(num => num<0);
+const find = findNum >= 0 ? "모든 숫자가 양수" : "음수가 있음"
+console.log(findNum);
+console.log(find);
